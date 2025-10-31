@@ -119,7 +119,14 @@ Pod::Spec.new do |spec|
   # spec.framework  = "SomeFramework"
   # spec.frameworks = "SomeFramework", "AnotherFramework"
   
-  spec.vendored_frameworks = 'ADXiluSDK/ADXiluSDK.xcframework'
+    spec.frameworks = "UIKit", "Foundation", "AVFoundation", "CoreLocation", "SystemConfiguration", "AdSupport", "CoreTelephony"
+  
+    spec.default_subspecs  = 'Core'
+  
+    spec.subspec 'Core' do |s|
+        s.vendored_frameworks  = 'ADXiluSDK/ADXiluSDK.framework'
+    end
+
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
@@ -136,4 +143,6 @@ Pod::Spec.new do |spec|
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
 
+    spec.dependency 'ObjectMapper'
+    spec.dependency 'CryptoSwift'
 end
