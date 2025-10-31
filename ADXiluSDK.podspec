@@ -119,7 +119,7 @@ Pod::Spec.new do |spec|
   # spec.framework  = "SomeFramework"
   # spec.frameworks = "SomeFramework", "AnotherFramework"
   
-  spec.vendored_frameworks = 'ADXiluSDK/ADXiluSDK.framework'
+  spec.vendored_frameworks = 'ADXiluSDK/ADXiluSDK.xcframework'
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
