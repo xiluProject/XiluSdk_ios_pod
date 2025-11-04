@@ -963,6 +963,9 @@ open class CodableTransform<T> where T : Swift.Decodable, T : Swift.Encodable {
   #endif
   @objc deinit
 }
+extension Foundation.NSError {
+  public func fullInfo() -> Swift.String
+}
 extension Foundation.NSDictionary {
   @objc dynamic public func jsonString() -> Swift.String
 }
