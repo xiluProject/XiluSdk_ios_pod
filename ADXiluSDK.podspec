@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
 spec.name         = "ADXiluSDK"
-spec.version      = "1.0.2"
+spec.version      = "1.0.3"
 spec.summary      = "ADXilu iOS SDK - 广告聚合SDK"
 
 spec.description  = <<-DESC

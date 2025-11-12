@@ -649,7 +649,6 @@ SWIFT_CLASS("_TtC9ADXiluSDK20ADXiluInterstitialAd")
 SWIFT_CLASS("_TtC9ADXiluSDK14ADXiluNativeAd")
 @interface ADXiluNativeAd : ADXiluBaseAd
 @property (nonatomic) BOOL isTemplate;
-/// 请求数量
 @property (nonatomic, strong) UIView * _Nullable containerView;
 @property (nonatomic, strong) UIViewController * _Nullable nativeViewController;
 /// 是否静音播放
@@ -1645,7 +1644,6 @@ SWIFT_CLASS("_TtC9ADXiluSDK20ADXiluInterstitialAd")
 SWIFT_CLASS("_TtC9ADXiluSDK14ADXiluNativeAd")
 @interface ADXiluNativeAd : ADXiluBaseAd
 @property (nonatomic) BOOL isTemplate;
-/// 请求数量
 @property (nonatomic, strong) UIView * _Nullable containerView;
 @property (nonatomic, strong) UIViewController * _Nullable nativeViewController;
 /// 是否静音播放
