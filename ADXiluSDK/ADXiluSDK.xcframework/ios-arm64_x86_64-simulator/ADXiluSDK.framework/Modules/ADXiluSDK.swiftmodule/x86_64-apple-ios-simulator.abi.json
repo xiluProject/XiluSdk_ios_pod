@@ -33853,72 +33853,44 @@
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
       "kind": "IntegerLiteral",
-      "offset": 2277,
+      "offset": 2230,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
       "kind": "IntegerLiteral",
-      "offset": 2627,
+      "offset": 2580,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
       "kind": "StringLiteral",
-      "offset": 2883,
+      "offset": 2917,
       "length": 9,
       "value": "\"bidding\""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
-      "kind": "StringLiteral",
-      "offset": 2975,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3047,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
       "kind": "Array",
-      "offset": 3314,
+      "offset": 3337,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
       "kind": "IntegerLiteral",
-      "offset": 3346,
+      "offset": 3369,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
       "kind": "StringLiteral",
-      "offset": 3724,
+      "offset": 3757,
       "length": 9,
       "value": "\"bidding\""
-    },
-    {
-      "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
-      "kind": "StringLiteral",
-      "offset": 3817,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3890,
-      "length": 1,
-      "value": "0"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
@@ -33930,16 +33902,37 @@
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
       "kind": "Array",
-      "offset": 4338,
+      "offset": 4360,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
       "kind": "FloatLiteral",
-      "offset": 4875,
+      "offset": 4897,
       "length": 3,
       "value": "5.0"
+    },
+    {
+      "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
+      "kind": "StringLiteral",
+      "offset": 7029,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
+      "kind": "StringLiteral",
+      "offset": 9951,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Core\/ADXiluBaseAd.swift",
+      "kind": "StringLiteral",
+      "offset": 10730,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluDrawVodAd.swift",
@@ -34042,98 +34035,98 @@
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "BooleanLiteral",
-      "offset": 2108,
+      "offset": 1184,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "BooleanLiteral",
-      "offset": 3360,
+      "offset": 2436,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "BooleanLiteral",
-      "offset": 3544,
+      "offset": 2620,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "StringLiteral",
-      "offset": 4653,
+      "offset": 4140,
       "length": 6,
       "value": "\"feed\""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "IntegerLiteral",
-      "offset": 4680,
+      "offset": 4167,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "StringLiteral",
-      "offset": 4721,
+      "offset": 4208,
       "length": 6,
       "value": "\"feed\""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "StringLiteral",
-      "offset": 4746,
+      "offset": 4233,
       "length": 4,
       "value": "\"bz\""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "StringLiteral",
-      "offset": 4770,
+      "offset": 4257,
       "length": 42,
       "value": "\"beizi信息流-自渲染广告位配置:\""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "StringLiteral",
-      "offset": 4956,
+      "offset": 4443,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "IntegerLiteral",
-      "offset": 4970,
+      "offset": 4457,
       "length": 4,
       "value": "5000"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "Array",
-      "offset": 5178,
+      "offset": 4650,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "Array",
-      "offset": 5230,
+      "offset": 4702,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "StringLiteral",
-      "offset": 14961,
+      "offset": 13631,
       "length": 33,
       "value": "\"MSNativeFeedAd { pid: \""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluNativeAd.swift",
       "kind": "StringLiteral",
-      "offset": 14990,
+      "offset": 13660,
       "length": 1,
       "value": "\") }\""
     },
@@ -34154,63 +34147,63 @@
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluRewardVodAd.swift",
       "kind": "BooleanLiteral",
-      "offset": 7070,
+      "offset": 7059,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluRewardVodAd.swift",
       "kind": "StringLiteral",
-      "offset": 7470,
+      "offset": 7459,
       "length": 15,
       "value": "\"rewardedVideo\""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluRewardVodAd.swift",
       "kind": "StringLiteral",
-      "offset": 7525,
+      "offset": 7514,
       "length": 15,
       "value": "\"rewardedVideo\""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluRewardVodAd.swift",
       "kind": "StringLiteral",
-      "offset": 7559,
+      "offset": 7548,
       "length": 4,
       "value": "\"bz\""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluRewardVodAd.swift",
       "kind": "StringLiteral",
-      "offset": 7697,
+      "offset": 7686,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluRewardVodAd.swift",
       "kind": "IntegerLiteral",
-      "offset": 7711,
+      "offset": 7700,
       "length": 4,
       "value": "5000"
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluRewardVodAd.swift",
       "kind": "StringLiteral",
-      "offset": 12150,
+      "offset": 12139,
       "length": 50,
       "value": "\"MSRewardVideoAd { pid: \""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluRewardVodAd.swift",
       "kind": "StringLiteral",
-      "offset": 12180,
+      "offset": 12169,
       "length": 1,
       "value": "\", ecpm: \""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluRewardVodAd.swift",
       "kind": "StringLiteral",
-      "offset": 12197,
+      "offset": 12186,
       "length": 1,
       "value": "\" }\""
     },
@@ -34504,21 +34497,21 @@
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluSplashAd.swift",
       "kind": "StringLiteral",
-      "offset": 13130,
+      "offset": 13044,
       "length": 45,
       "value": "\"MSSplashAd { pid: \""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluSplashAd.swift",
       "kind": "StringLiteral",
-      "offset": 13155,
+      "offset": 13069,
       "length": 1,
       "value": "\", ecpm: \""
     },
     {
       "filePath": "\/Users\/sagan\/Desktop\/Code\/ADXilu\/XiluSdk-ios\/ADXiluSDK\/Classes\/Ads\/ADXiluSplashAd.swift",
       "kind": "StringLiteral",
-      "offset": 13172,
+      "offset": 13086,
       "length": 1,
       "value": "\" }\""
     },

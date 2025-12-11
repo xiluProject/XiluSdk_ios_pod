@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
 spec.name         = "ADXiluSDK"
-spec.version      = "1.0.3"
+spec.version      = "1.0.4"
 spec.summary      = "ADXilu iOS SDK - 广告聚合SDK"
 
 spec.description  = <<-DESC
@@ -19,7 +19,7 @@ spec.source       = { :git => "https://github.com/xiluProject/XiluSdk_ios_pod.gi
 spec.frameworks = "UIKit", "Foundation", "AVFoundation", "CoreLocation", "SystemConfiguration", "AdSupport", "CoreTelephony"
 
 spec.vendored_frameworks  = 'ADXiluSDK/ADXiluSDK.xcframework'
-spec.swift_versions = ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6']
+spec.swift_versions = '>= 5.0'
 
 spec.dependency 'ObjectMapper'
 spec.dependency 'CryptoSwift'

@@ -5,7 +5,7 @@ ADXiluSDK-iOS
 1 使用CocoaPods集成
 在项目的 Podfile 中添加下列内容
 
-pod 'ADXiluSDK', '~>1.0.0'
+pod 'ADXiluSDK', '~>1.0.3'
 
 
 
