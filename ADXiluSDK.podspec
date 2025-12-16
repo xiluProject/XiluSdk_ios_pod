@@ -19,7 +19,7 @@ spec.source       = { :git => "https://github.com/xiluProject/XiluSdk_ios_pod.gi
 spec.frameworks = "UIKit", "Foundation", "AVFoundation", "CoreLocation", "SystemConfiguration", "AdSupport", "CoreTelephony"
 
 spec.vendored_frameworks  = 'ADXiluSDK/ADXiluSDK.xcframework'
-#spec.swift_versions = ">= 5.0"
+spec.swift_version = "5.6"
 
 spec.dependency 'ObjectMapper'
 spec.dependency 'CryptoSwift'
