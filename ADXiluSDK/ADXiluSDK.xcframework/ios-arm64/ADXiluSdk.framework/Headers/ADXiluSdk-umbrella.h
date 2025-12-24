@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double ADXiluSdkVersionNumber;
-FOUNDATION_EXPORT const unsigned char ADXiluSdkVersionString[];
+FOUNDATION_EXPORT double ADXiluSDKVersionNumber;
+FOUNDATION_EXPORT const unsigned char ADXiluSDKVersionString[];
 

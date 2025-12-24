@@ -17,10 +17,8 @@ ADXiluSDK是一个支持多平台广告聚合的iOS SDK，提供统一的API接�
 - **横幅广告** (Banner Ad)
 - **插屏广告** (Interstitial Ad)  
 - **激励视频广告** (Reward Video Ad)
-- **原生广告** (Native Ad)
 - **开屏广告** (Splash Ad)
-- **全屏视频广告** (Full Screen Video Ad)
-- **Draw视频信息流** (Draw Video Feed Ad)
+- **信息流广告** (Native Ad)
 
 ## 支持的广告平台
 
@@ -104,6 +102,51 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 #### 横幅广告
 
+#### Objective-C
+
+```objc
+#import <ADXiluSDK/ADXiluSDK.h>
+
+- (void)loadBannerAd {
+    if (![ADXiluSDK shared].isInitialized) {
+        [self showAlertWithTitle:@"错误" message:@"SDK未初始化"];
+        return;
+    }
+    
+    // 释放之前的广告
+    self.bannerAd = nil;
+    
+    // 创建Banner广告
+    ADXiluAdSize *adSize = [[ADXiluAdSize alloc] initWithWidth:CGRectGetWidth([UIScreen mainScreen].bounds) height:60];
+    self.bannerAd = [[ADXiluBannerAd alloc] initWithAdPosId:@"your_interstitial_ad_pos_id" adSize:adSize];
+    self.bannerAd.showCloseBtn = YES;
+    self.bannerAd.containerView = self.containerView;
+    self.bannerAd.nativeViewController = self;
+    self.bannerAd.delegate = self;
+    self.bannerAd.autoRefreshInterval = 5;
+    
+    self.statusLabel.text = @"状态：正在加载...";
+    self.statusLabel.textColor = [UIColor systemOrangeColor];
+    
+    [self.bannerAd loadAd];
+}
+// 实现代理方法
+- (void)xilu_AdDidReceive:(ADXiluBaseAd *)xiluAd adInfo:(ADXiluAdInfo *)adInfo {
+    NSLog(@"Banner广告加载成功");
+}
+
+- (void)xilu_AdDidFail:(ADXiluBaseAd *)xiluAd error:(ADXiluError *)error {
+    NSLog(@"Banner广告加载失败： %@", error);
+}
+- (void)xilu_AdDidClick:(ADXiluBaseAd *)xiluAd adInfo:(ADXiluAdInfo *)adInfo {
+    NSLog(@"Banner广告被点击");
+}
+- (void)xilu_AdDidClose:(ADXiluBaseAd *)xiluAd adInfo:(ADXiluAdInfo *)adInfo {
+    NSLog(@"Banner广告被关闭");
+}
+```
+
+#### Swift
 ```swift
 import ADXiluSDK
 
@@ -156,7 +199,41 @@ extension BannerAdViewController: ADXiluBaseAdDelegate {
 ```
 
 #### 插屏广告
+#### Objective-C
 
+```objc
+#import <ADXiluSDK/ADXiluSDK.h>
+
+- (void)loadInterstitialAd {
+    if (![ADXiluSDK shared].isInitialized) {
+        [self showAlertWithTitle:@"错误" message:@"SDK未初始化"];
+        return;
+    }
+    _interstitialAd = [[ADXiluInterstitialAd alloc] initWithAdPosId:@"your_interstitial_ad_pos_id"
+                                                             adSize:[ADXiluAdSize screenSize]
+                                                             rootVC:self];
+    _interstitialAd.delegate = self;
+    [self.interstitialAd loadAd];
+}
+// 实现代理方法
+- (void)xilu_AdDidReceive:(ADXiluBaseAd *)xiluAd adInfo:(ADXiluAdInfo *)adInfo {
+    NSLog(@"插屏广告加载成功");
+    // 可以展示广告
+    [(ADXiluInterstitialAd *)xiluAd showAdFrom:self];
+}
+
+- (void)xilu_AdDidFail:(ADXiluBaseAd *)xiluAd error:(ADXiluError *)error {
+    NSLog(@"插屏广告加载失败： %@", error);
+}
+- (void)xilu_AdDidClick:(ADXiluBaseAd *)xiluAd adInfo:(ADXiluAdInfo *)adInfo {
+    NSLog(@"插屏广告被点击");
+}
+- (void)xilu_AdDidClose:(ADXiluBaseAd *)xiluAd adInfo:(ADXiluAdInfo *)adInfo {
+    NSLog(@"插屏广告被关闭");
+}
+```
+
+#### Swift
 ```swift
 class InterstitialAdViewController: UIViewController {
     private var interstitialAd: ADXiluInterstitialAd?
@@ -181,7 +258,7 @@ class InterstitialAdViewController: UIViewController {
         interstitialAd?.showAd(from: self)
     }
 }
-
+// 实现代理方法
 extension InterstitialAdViewController: ADXiluBaseAdDelegate {
     func xilu_AdDidReceive(_ xiluAd: ADXiluBaseAd, adInfo: ADXiluAdInfo) {
         print("插屏广告加载成功")
@@ -200,7 +277,53 @@ extension InterstitialAdViewController: ADXiluBaseAdDelegate {
 ```
 
 #### 激励视频广告
+#### Objective-C
 
+```objc
+#import <ADXiluSDK/ADXiluSDK.h>
+
+- (void)loadRewardVodAd {
+    if (![ADXiluSDK.shared isInitialized]) {
+        [self showAlertWithTitle:@"错误" message:@"SDK未初始化"];
+        return;
+    }
+    
+    // 释放之前的广告
+    [self.rewardVodAd p_release];
+    
+    // 创建激励视频广告
+    self.rewardVodAd = [[ADXiluRewardVodAd alloc] initWithAdPosId:@"your_interstitial_ad_pos_id"];
+    self.rewardVodAd.delegate = self;
+    self.rewardVodAd.videoDelegate = self;
+    self.rewardVodAd.isMuted = NO;
+    
+    self.statusLabel.text = @"状态：正在加载...";
+    self.statusLabel.textColor = [UIColor systemOrangeColor];
+    
+    [self.rewardVodAd loadAd];
+}
+// 实现代理方法
+//ADXiluBaseAdDelegate
+- (void)xilu_AdDidReceive:(ADXiluBaseAd *)xiluAd adInfo:(ADXiluAdInfo *)adInfo {
+    NSLog(@"激励视频加载成功");
+    // 可以展示广告
+    [self.rewardVodAd showAdFrom:self];
+}
+
+- (void)xilu_AdDidFail:(ADXiluBaseAd *)xiluAd error:(ADXiluError *)error {
+    NSLog(@"激励视频加载失败： %@", error);
+}
+//ADXiluRewardVodAdDelegate
+- (void)xilu_AdDidReward:(ADXiluBaseAd *)rewardVodAd adInfo:(ADXiluAdInfo *)adInfo {
+    NSLog(@"获得奖励");
+}
+
+- (void)xilu_AdVideoDidComplete:(ADXiluBaseAd *)rewardVodAd adInfo:(ADXiluAdInfo *)adInfo{
+    NSLog("视频播放完成");
+}
+```
+
+#### Swift
 ```swift
 class RewardVodAdViewController: UIViewController {
     private var rewardVodAd: ADXiluRewardVodAd?
@@ -224,7 +347,7 @@ class RewardVodAdViewController: UIViewController {
         rewardVodAd?.showAd(from: self)
     }
 }
-
+// 实现代理方法
 extension RewardVodAdViewController: ADXiluBaseAdDelegate {
     func xilu_AdDidReceive(_ xiluAd: ADXiluBaseAd, adInfo: ADXiluAdInfo) {
         print("激励视频广告加载成功")
@@ -249,7 +372,52 @@ extension RewardVodAdViewController: ADXiluRewardVodAdDelegate {
 ```
 
 #### 开屏广告
+#### Objective-C
 
+```objc
+#import <ADXiluSDK/ADXiluSDK.h>
+
+- (void)loadSplashAd {
+    if (![ADXiluSDK.shared isInitialized]) {
+        [self showAlertWithTitle:@"错误" message:@"SDK未初始化"];
+        return;
+    }
+    
+    // 释放之前的广告
+    [self.splashAd p_release];
+    
+    // 创建开屏广告
+    ADXiluAdSize *adSize = [[ADXiluAdSize alloc] initWithWidth:[UIScreen mainScreen].bounds.size.width height:300];
+    self.splashAd = [[ADXiluSplashAd alloc] initWithAdPosId:@"your_interstitial_ad_pos_id" style:ADXiluSplashAdStyleHalfScreen adSize:adSize];
+    self.splashAd.bottomView = self.bottomView;
+    self.splashAd.delegate = self;
+    self.splashAd.countdownDuration = 5.0;
+    
+    self.statusLabel.text = @"状态：正在加载...";
+    self.statusLabel.textColor = [UIColor systemOrangeColor];
+    self.loadButton.enabled = NO;
+    
+    [self.splashAd loadAd];
+    self.showButton.hidden = YES;
+}
+// 实现代理方法
+- (void)xilu_AdDidReceive:(ADXiluBaseAd *)xiluAd adInfo:(ADXiluAdInfo *)adInfo {
+    NSLog("开屏广告加载成功");
+    // 可以展示广告
+    [self.splashAd showAdIn:self.containerView];
+}
+
+
+- (void)xilu_AdDidFail:(ADXiluBaseAd *)xiluAd error:(ADXiluError *)error {
+    NSLog(@"开屏广告加载失败: %@", error);
+}
+
+- (void)xilu_AdTick:(ADXiluBaseAd *)xiluAd remainingTime:(NSTimeInterval)remainingTime {
+    NSLog(@"倒计时: %f", remainingTime);
+}
+```
+
+#### Swift
 ```swift
 class SplashAdViewController: UIViewController {
     private var splashAd: ADXiluSplashAd?
@@ -293,44 +461,107 @@ extension SplashAdViewController: ADXiluBaseAdDelegate {
 }
 ```
 
-#### 原生广告
+#### 信息流广告
+#### Objective-C
 
-```swift
-class NativeAdViewController: UIViewController {
-    private var nativeAd: ADXiluNativeAd?
+```objc
+#import <ADXiluSDK/ADXiluSDK.h>
+
+- (void)loadNativeAd {
+    _nativeAd = [[ADXiluNativeAd alloc] initWithAdPosId:@"your_interstitial_ad_pos_id" adSize:[ADXiluAdSize screenSize] count:ad_count];
+    _nativeAd.delegate = self;
+    _nativeAd.containerView = nil;
+    _nativeAd.isTemplate = false;//(信息流模板广告为true,信息流自渲染广告为false)
+    [self.nativeAd loadAd];
+}
+
+
+// 实现代理方法
+- (void)xilu_AdDidReceiveMuti:(ADXiluBaseAd *)xiluAd adInfos:(NSArray<ADXiluAdInfo *> *)adInfos {
+    NSLog(@"信息流广告加载成功：%@", adInfos);
+      for (ADXiluAdInfo *adInfo in adInfos) {
+        UIView *adTemplateView = adInfo.extraData[@"nativeAdView"];
+        MSNativeFeedAdModel *adModel = adInfo.extraData[@"nativeAdData"];
+
+       
+        if (adTemplateView) {
+                //模板广告
+            [self.adContainerView addArrangedSubview:adTemplateView];//替换成广告容器视图
+        } else if (adModel) {
+            //自渲染广告，取nativeAdData
+            UIView *adView = [self createAdView:adModel];
+            [adView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showAdDetail)]];
+            [self.adContainerView addArrangedSubview:adView];
+        }
+    }
+
     
-    private func loadNativeAd() {
+}
+
+
+- (void)xilu_AdDidFail:(ADXiluBaseAd *)xiluAd error:(ADXiluError *)error {
+    NSLog(@"信息流广告加载失败: %@", error);
+}
+
+```
+
+#### Swift
+```swift
+class NativeRenderAdViewController: UIViewController {
+    
+    @objc private func loadAd() {
         guard ADXiluSDK.shared.isInitialized else {
-            print("SDK未初始化")
+            showAlert(title: "错误", message: "SDK未初始化")
             return
         }
         
-        // 创建原生广告
+        // 释放之前的广告
+        nativeAd?.p_release()
+        
+        // 创建信息流广告
         let adSize = ADXiluAdSize(width: UIScreen.main.bounds.width, height: 300)
-        nativeAd = ADXiluNativeAd(adPosId: "your_native_ad_pos_id", 
-                                  adSize: adSize, 
-                                  count: 3)
+        nativeAd = ADXiluNativeAd(adPosId: your_interstitial_ad_pos_id, adSize: adSize, count:ad_count)
+        nativeAd?.isTemplate = false (信息流模板广告为true,信息流自渲染广告为false)
         nativeAd?.nativeViewController = self
         nativeAd?.delegate = self
         
         nativeAd?.loadAd()
     }
 }
-
-extension NativeAdViewController: ADXiluBaseAdDelegate {
+// 实现代理方法
+extension NativeRenderAdViewController: ADXiluBaseAdDelegate {
     func xilu_AdDidReceiveMuti(_ xiluAd: ADXiluBaseAd, adInfos: [ADXiluAdInfo]) {
-        print("原生广告加载成功，数量: \(adInfos.count)")
+        print("信息流广告加载成功")
         
         for adInfo in adInfos {
             if let adView = adInfo.extraData["nativeAdView"] as? UIView {
-                // 将广告视图添加到界面中
-                view.addSubview(adView)
+            //模板广告
+                nativeAds.append(adView)
+            }
+            if let model = adInfo.extraData["nativeAdData"] as? MSNativeFeedAdModel {
+                //自渲染广告
+                if model.adMaterialMeta?.metaCreativeType() != MSCreativeType.video {
+                    let adView:MSNativeSimpleCustomAdView = MSNativeSimpleCustomAdView()
+                    adView.delegate = self
+                    adView.presentVc = self
+                    adView.loadFeedAdMeta(feedAdMeta: model.adMaterialMeta!)
+                    adView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: adView.calculateAdHeightWithFeedAdMeta(feedAd: model.adMaterialMeta!))
+                    nativeAds.append(adView)
+                } else {
+                    let adView: MSNativeSimpleCustomVideoAdView = MSNativeSimpleCustomVideoAdView()
+                    adView.delegate = self
+                    adView.presentVc = self
+                    adView.loadFeedAdMeta(feedAdMeta: model.adMaterialMeta!)
+                    adView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: adView.calculateAdHeightWithFeedAdMeta(feedAd: model.adMaterialMeta!))
+                    nativeAds.append(adView)
+                }
             }
         }
+        displayAd()
     }
-    
     func xilu_AdDidFail(_ xiluAd: ADXiluBaseAd, error: ADXiluError) {
-        print("原生广告加载失败: \(error.message)")
+        print("信息流加载失败")
+        
     }
 }
 ```
