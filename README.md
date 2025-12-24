@@ -65,7 +65,7 @@ pod install
 #### Objective-C
 
 ```objc
-#import <ADXiluSDK/ADXiluSDK.h>
+#import "ADXiluSdk/ADXiluSDK-Swift.h"
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[ADXiluSDK shared] initializeWithAppId:@"your_app_id" 
@@ -105,7 +105,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 #### Objective-C
 
 ```objc
-#import <ADXiluSDK/ADXiluSDK.h>
+#import "ADXiluSdk/ADXiluSDK-Swift.h"
 
 - (void)loadBannerAd {
     if (![ADXiluSDK shared].isInitialized) {
@@ -202,7 +202,7 @@ extension BannerAdViewController: ADXiluBaseAdDelegate {
 #### Objective-C
 
 ```objc
-#import <ADXiluSDK/ADXiluSDK.h>
+#import "ADXiluSdk/ADXiluSDK-Swift.h"
 
 - (void)loadInterstitialAd {
     if (![ADXiluSDK shared].isInitialized) {
@@ -280,7 +280,7 @@ extension InterstitialAdViewController: ADXiluBaseAdDelegate {
 #### Objective-C
 
 ```objc
-#import <ADXiluSDK/ADXiluSDK.h>
+#import "ADXiluSdk/ADXiluSDK-Swift.h"
 
 - (void)loadRewardVodAd {
     if (![ADXiluSDK.shared isInitialized]) {
@@ -375,7 +375,7 @@ extension RewardVodAdViewController: ADXiluRewardVodAdDelegate {
 #### Objective-C
 
 ```objc
-#import <ADXiluSDK/ADXiluSDK.h>
+#import "ADXiluSdk/ADXiluSDK-Swift.h"
 
 - (void)loadSplashAd {
     if (![ADXiluSDK.shared isInitialized]) {
@@ -465,7 +465,7 @@ extension SplashAdViewController: ADXiluBaseAdDelegate {
 #### Objective-C
 
 ```objc
-#import <ADXiluSDK/ADXiluSDK.h>
+#import "ADXiluSdk/ADXiluSDK-Swift.h"
 
 - (void)loadNativeAd {
     _nativeAd = [[ADXiluNativeAd alloc] initWithAdPosId:@"your_interstitial_ad_pos_id" adSize:[ADXiluAdSize screenSize] count:ad_count];
