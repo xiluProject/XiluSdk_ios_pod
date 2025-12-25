@@ -4,13 +4,13 @@ ADXiluSDK是一个支持多平台广告聚合的iOS SDK，提供统一的API接�
 
 ## 特性
 
-- 🚀 **多平台支持**: 集成MSMobAdSDK和BeiZiSDK
-- 📱 **iOS兼容**: 最低支持iOS 12.2，兼容新老系统API
-- 🔧 **组件化架构**: 模块化设计，易于扩展和维护
-- 🎯 **统一接口**: 提供一致的API，简化多平台广告管理
-- 💻 **多语言支持**: 支持Objective-C和Swift
-- 📊 **完整回调**: 提供加载、展示、点击、关闭等完整事件回调
-- 🛠 **易于集成**: 通过CocoaPods简单集成
+- **多平台支持**: 集成MSMobAdSDK和BeiZiSDK
+- **iOS兼容**: 最低支持iOS 12.2，兼容新老系统API
+- **组件化架构**: 模块化设计，易于扩展和维护
+- **统一接口**: 提供一致的API，简化多平台广告管理
+- **多语言支持**: 支持Objective-C和Swift
+- **完整回调**: 提供加载、展示、点击、关闭等完整事件回调
+- **易于集成**: 通过CocoaPods简单集成
 
 ## 支持的广告类型
 
@@ -779,12 +779,14 @@ MIT License
 如有问题或建议，请联系：
 
 - 邮箱: xiaowei.zou@chinasns.com
-- 文档: https://github.com/xiluProject/XiluSdk_ios_pod
-- 问题反馈: https://github.com/xiluProject/XiluSdk_ios_pod/issues
+- pod地址: https://github.com/xiluProject/XiluSdk_ios_pod
+- pod问题反馈: https://github.com/xiluProject/XiluSdk_ios_pod/issues
+- demo地址: https://github.com/xiluProject/XiluSdk_ios_demo
+- demo问题反馈: https://github.com/xiluProject/XiluSdk_ios_demo/issues
 
 ## 更新日志
 
-### v1.0.0 (2025-10-27)
+### v1.0.6 (2025-12-24)
 - 初始版本发布
 - 支持MSMobAdSDK和BeiZiSDK集成
 - 提供完整的广告类型支持
