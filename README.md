@@ -778,9 +778,9 @@ MIT License
 
 如有问题或建议，请联系：
 
-- 邮箱: support@xilu.com
-- 文档: https://github.com/xilu/ADXiluSDK-iOS
-- 问题反馈: https://github.com/xilu/ADXiluSDK-iOS/issues
+- 邮箱: xiaowei.zou@chinasns.com
+- 文档: https://github.com/xiluProject/XiluSdk_ios_pod
+- 问题反馈: https://github.com/xiluProject/XiluSdk_ios_pod/issues
 
 ## 更新日志
 
