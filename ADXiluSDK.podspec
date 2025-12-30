@@ -1,52 +1,40 @@
 #
-#  Be sure to run `pod spec lint ADXiluSDK.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
+# Be sure to run `pod lib lint ADXiluSDK.podspec' to ensure this is a
+# valid spec before submitting.
 #
-#  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
-
-Pod::Spec.new do |spec|
-
-# ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-#
-#  These will help people to find your library, and whilst it
-#  can feel like a chore to fill in it's definitely to your advantage. The
-#  summary should be tweet-length, and the description more in depth.
+# Any lines starting with a # are optional, but their use is encouraged
+# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
 
-spec.name         = "ADXiluSDK"
-spec.version      = "1.0.5"
-spec.summary      = "ADXilu iOS SDK - 广告聚合SDK"
+Pod::Spec.new do |s|
+  s.name             = 'ADXiluSDK'
+  s.version          = '1.0.6'
+  s.summary          = 'ADXilu iOS SDK - 广告聚合SDK'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-spec.description  = <<-DESC
-ADXilu iOS SDK 是一个广告聚合SDK，支持多个主流广告平台，提供统一的广告接口。
-DESC
+  s.description      = <<-DESC
+    ADXilu iOS SDK 是一个广告聚合SDK，支持多个主流广告平台，提供统一的广告接口。
+  DESC
 
-spec.homepage     = "https://github.com/xiluProject/XiluSdk_ios_pod.git"
-spec.license      = "MIT"
-spec.platform     = :ios, "12.2"
-spec.ios.deployment_target = '12.2'
-spec.author      = { 'Sagan' => 'sagan@xilu.com' }
+  s.homepage         = 'https://github.com/XiluSdk_ios_pod'
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.author           = { 'zyn' => 'zyn@163.com' }
+  s.source           = { :git => 'https://github.com/XiluSdk_ios_pod.git', :tag => s.version.to_s }
 
-spec.source       = { :git => "https://github.com/xiluProject/XiluSdk_ios_pod.git", :tag => "#{spec.version}" }
-
-spec.frameworks = "UIKit", "Foundation", "AVFoundation", "CoreLocation", "SystemConfiguration", "AdSupport", "CoreTelephony"
-
-spec.vendored_frameworks  = 'ADXiluSDK/ADXiluSDK.framework'
-
-# spec.libraries = "iconv", "xml2"
-spec.swift_versions = ['5.0', '5.1', '5.2']
-
-spec.dependency 'ObjectMapper'
-spec.dependency 'CryptoSwift'
-
-spec.dependency 'BeiZiSDK-iOS', '4.90.7.0'
-spec.dependency 'MSMobAdSDK/MS', '2.7.7.3'
-
+  s.platform    = :ios, '12.2'
+  s.ios.deployment_target = '12.2'
+  s.frameworks = "UIKit", "Foundation", "AVFoundation", "CoreLocation", "SystemConfiguration", "AdSupport", "CoreTelephony"
+ 
+  s.swift_version = "5.0"
+  s.vendored_frameworks = "ADXiluSDK/*.framework"
+  # Swift 库必须开启模块化
+  s.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES', # 核心：生成模块，否则其他项目无法导入
+    'SWIFT_VERSION' => '5.0'
+  }
+  s.dependency  'ObjectMapper'
+  s.dependency  'CryptoSwift'
+  s.dependency   'SnapKit'
+  s.dependency  'BeiZiSDK-iOS', '4.90.7.0'
+  s.dependency  'MSMobAdSDK/MS', '2.7.7.3'
+  s.exclude_files = "ADXiluSDK/Classes/Tool/*.md" # 排除所有 md 文件
 end

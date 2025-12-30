@@ -4,13 +4,13 @@ ADXiluSDK是一个支持多平台广告聚合的iOS SDK，提供统一的API接�
 
 ## 特性
 
-- **多平台支持**: 集成MSMobAdSDK和BeiZiSDK
-- **iOS兼容**: 最低支持iOS 12.2，兼容新老系统API
-- **组件化架构**: 模块化设计，易于扩展和维护
-- **统一接口**: 提供一致的API，简化多平台广告管理
-- **多语言支持**: 支持Objective-C和Swift
-- **完整回调**: 提供加载、展示、点击、关闭等完整事件回调
-- **易于集成**: 通过CocoaPods简单集成
+- 🚀 **多平台支持**: 集成MSMobAdSDK和BeiZiSDK
+- 📱 **iOS兼容**: 最低支持iOS 12.2，兼容新老系统API
+- 🔧 **组件化架构**: 模块化设计，易于扩展和维护
+- 🎯 **统一接口**: 提供一致的API，简化多平台广告管理
+- 💻 **多语言支持**: 支持Objective-C和Swift
+- 📊 **完整回调**: 提供加载、展示、点击、关闭等完整事件回调
+- 🛠 **易于集成**: 通过CocoaPods简单集成
 
 ## 支持的广告类型
 
@@ -65,10 +65,10 @@ pod install
 #### Objective-C
 
 ```objc
-#import "ADXiluSdk/ADXiluSDK-Swift.h"
+#import <ADXiluSDK/ADXiluSDK.h>
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[ADXiluSDK shared] initializeWithAppId:@"your_app_id" 
+    [[ADXiluSDKManager shared] initializeWithAppId:@"your_app_id" 
                                      debug:YES 
                                  completion:^(BOOL success, NSString * _Nullable error) {
         if (success) {
@@ -87,11 +87,11 @@ pod install
 import ADXiluSDK
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    ADXiluSDK.shared.initialize(appId: "your_app_id", debug: true) { success, error in
+    ADXiluSDKManager.shared.initialize(appId: "your_app_id", debug: true) { success, error in
         if success {
-            print("ADXiluSDK initialized successfully")
+            print("ADXiluSDKManager initialized successfully")
         } else {
-            print("ADXiluSDK initialization failed: \(error ?? "Unknown error")")
+            print("ADXiluSDKManager initialization failed: \(error ?? "Unknown error")")
         }
     }
     return true
@@ -105,10 +105,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 #### Objective-C
 
 ```objc
-#import "ADXiluSdk/ADXiluSDK-Swift.h"
+#import <ADXiluSDK/ADXiluSDK.h>
 
 - (void)loadBannerAd {
-    if (![ADXiluSDK shared].isInitialized) {
+    if (![ADXiluSDKManager shared].isInitialized) {
         [self showAlertWithTitle:@"错误" message:@"SDK未初始化"];
         return;
     }
@@ -160,7 +160,7 @@ class BannerAdViewController: UIViewController {
     }
     
     private func loadBannerAd() {
-        guard ADXiluSDK.shared.isInitialized else {
+        guard ADXiluSDKManager.shared.isInitialized else {
             print("SDK未初始化")
             return
         }
@@ -202,10 +202,10 @@ extension BannerAdViewController: ADXiluBaseAdDelegate {
 #### Objective-C
 
 ```objc
-#import "ADXiluSdk/ADXiluSDK-Swift.h"
+#import <ADXiluSDK/ADXiluSDK.h>
 
 - (void)loadInterstitialAd {
-    if (![ADXiluSDK shared].isInitialized) {
+    if (![ADXiluSDKManager shared].isInitialized) {
         [self showAlertWithTitle:@"错误" message:@"SDK未初始化"];
         return;
     }
@@ -239,7 +239,7 @@ class InterstitialAdViewController: UIViewController {
     private var interstitialAd: ADXiluInterstitialAd?
     
     private func loadInterstitialAd() {
-        guard ADXiluSDK.shared.isInitialized else {
+        guard ADXiluSDKManager.shared.isInitialized else {
             print("SDK未初始化")
             return
         }
@@ -280,10 +280,10 @@ extension InterstitialAdViewController: ADXiluBaseAdDelegate {
 #### Objective-C
 
 ```objc
-#import "ADXiluSdk/ADXiluSDK-Swift.h"
+#import <ADXiluSDK/ADXiluSDK.h>
 
 - (void)loadRewardVodAd {
-    if (![ADXiluSDK.shared isInitialized]) {
+    if (![ADXiluSDKManager.shared isInitialized]) {
         [self showAlertWithTitle:@"错误" message:@"SDK未初始化"];
         return;
     }
@@ -329,7 +329,7 @@ class RewardVodAdViewController: UIViewController {
     private var rewardVodAd: ADXiluRewardVodAd?
     
     private func loadRewardVodAd() {
-        guard ADXiluSDK.shared.isInitialized else {
+        guard ADXiluSDKManager.shared.isInitialized else {
             print("SDK未初始化")
             return
         }
@@ -375,10 +375,10 @@ extension RewardVodAdViewController: ADXiluRewardVodAdDelegate {
 #### Objective-C
 
 ```objc
-#import "ADXiluSdk/ADXiluSDK-Swift.h"
+#import <ADXiluSDK/ADXiluSDK.h>
 
 - (void)loadSplashAd {
-    if (![ADXiluSDK.shared isInitialized]) {
+    if (![ADXiluSDKManager.shared isInitialized]) {
         [self showAlertWithTitle:@"错误" message:@"SDK未初始化"];
         return;
     }
@@ -423,7 +423,7 @@ class SplashAdViewController: UIViewController {
     private var splashAd: ADXiluSplashAd?
     
     private func loadSplashAd() {
-        guard ADXiluSDK.shared.isInitialized else {
+        guard ADXiluSDKManager.shared.isInitialized else {
             print("SDK未初始化")
             return
         }
@@ -465,7 +465,7 @@ extension SplashAdViewController: ADXiluBaseAdDelegate {
 #### Objective-C
 
 ```objc
-#import "ADXiluSdk/ADXiluSDK-Swift.h"
+#import <ADXiluSDK/ADXiluSDK.h>
 
 - (void)loadNativeAd {
     _nativeAd = [[ADXiluNativeAd alloc] initWithAdPosId:@"your_interstitial_ad_pos_id" adSize:[ADXiluAdSize screenSize] count:ad_count];
@@ -510,7 +510,7 @@ extension SplashAdViewController: ADXiluBaseAdDelegate {
 class NativeRenderAdViewController: UIViewController {
     
     @objc private func loadAd() {
-        guard ADXiluSDK.shared.isInitialized else {
+        guard ADXiluSDKManager.shared.isInitialized else {
             showAlert(title: "错误", message: "SDK未初始化")
             return
         }
@@ -711,7 +711,7 @@ extension NativeRenderAdViewController: ADXiluBaseAdDelegate {
 
 ```swift
 // 初始化时设置调试模式
-ADXiluSDK.shared.initialize(appId: "your_app_id", debug: true) { success, error in
+ADXiluSDKManager.shared.initialize(appId: "your_app_id", debug: true) { success, error in
     if success {
         print("SDK初始化成功")
     } else {
@@ -752,7 +752,7 @@ ADXiluSDK采用组件化架构设计：
 ```
 ADXiluSDK/
 ├── Core/                    # 核心模块
-│   ├── ADXiluSDK.swift     # 主管理类
+│   ├── ADXiluSDKManager.swift     # 主管理类
 │   ├── ADXiluBaseAd.swift  # 广告基类
 │   ├── ADAdaptor.swift     # 适配器管理
 │   └── ADNetworkTool.swift # 网络工具
@@ -778,15 +778,13 @@ MIT License
 
 如有问题或建议，请联系：
 
-- 邮箱: xiaowei.zou@chinasns.com
-- pod地址: https://github.com/xiluProject/XiluSdk_ios_pod
-- pod问题反馈: https://github.com/xiluProject/XiluSdk_ios_pod/issues
-- demo地址: https://github.com/xiluProject/XiluSdk_ios_demo
-- demo问题反馈: https://github.com/xiluProject/XiluSdk_ios_demo/issues
+- 邮箱: support@xilu.com
+- 文档: https://github.com/xilu/ADXiluSDK-iOS
+- 问题反馈: https://github.com/xilu/ADXiluSDK-iOS/issues
 
 ## 更新日志
 
-### v1.0.6 (2025-12-24)
+### v1.0.0 (2025-10-27)
 - 初始版本发布
 - 支持MSMobAdSDK和BeiZiSDK集成
 - 提供完整的广告类型支持
