@@ -520,7 +520,7 @@ class NativeRenderAdViewController: UIViewController {
         
         // 创建信息流广告
         let adSize = ADXiluAdSize(width: UIScreen.main.bounds.width, height: 300)
-        nativeAd = ADXiluNativeAd(adPosId: your_interstitial_ad_pos_id, adSize: adSize, count:ad_count)
+        nativeAd = ADXiluNativeAd(adPosId: "your_interstitial_ad_pos_id", adSize: adSize, count:ad_count)
         nativeAd?.isTemplate = false (信息流模板广告为true,信息流自渲染广告为false)
         nativeAd?.nativeViewController = self
         nativeAd?.delegate = self
@@ -779,7 +779,7 @@ MIT License
 如有问题或建议，请联系：
 
 - 邮箱: support@xilu.com
-- 文档: https://github.com/xilu/ADXiluSDK-iOS
+- 文档: https://github.com/XiluSdk_ios_pod.git
 - 问题反馈: https://github.com/xilu/ADXiluSDK-iOS/issues
 
 ## 更新日志
