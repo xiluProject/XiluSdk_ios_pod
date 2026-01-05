@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ADXiluSDK'
-  s.version          = '1.0.6'
+  s.version          = '1.0.5'
   s.summary          = 'ADXilu iOS SDK - 广告聚合SDK'
 
   s.description      = <<-DESC
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/xiluProject/XiluSdk_ios_pod'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'zyn' => 'zyn@163.com' }
+  s.author           = { 'Sagan' => 'sagan@xilu.com' }
   s.source           = { :git => 'https://github.com/xiluProject/XiluSdk_ios_pod.git', :tag => s.version.to_s }
 
   s.platform    = :ios, '12.2'

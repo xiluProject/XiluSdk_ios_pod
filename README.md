@@ -68,7 +68,7 @@ pod install
 #import <ADXiluSDK/ADXiluSDK.h>
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[ADXiluSDKManager shared] initializeWithAppId:@"your_app_id" 
+    [[ADXiluSDK shared] initializeWithAppId:@"your_app_id" 
                                      debug:YES 
                                  completion:^(BOOL success, NSString * _Nullable error) {
         if (success) {
@@ -87,11 +87,11 @@ pod install
 import ADXiluSDK
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    ADXiluSDKManager.shared.initialize(appId: "your_app_id", debug: true) { success, error in
+    ADXiluSDK.shared.initialize(appId: "your_app_id", debug: true) { success, error in
         if success {
-            print("ADXiluSDKManager initialized successfully")
+            print("ADXiluSDK initialized successfully")
         } else {
-            print("ADXiluSDKManager initialization failed: \(error ?? "Unknown error")")
+            print("ADXiluSDK initialization failed: \(error ?? "Unknown error")")
         }
     }
     return true
@@ -108,7 +108,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 #import <ADXiluSDK/ADXiluSDK.h>
 
 - (void)loadBannerAd {
-    if (![ADXiluSDKManager shared].isInitialized) {
+    if (![ADXiluSDK shared].isInitialized) {
         [self showAlertWithTitle:@"错误" message:@"SDK未初始化"];
         return;
     }
@@ -160,7 +160,7 @@ class BannerAdViewController: UIViewController {
     }
     
     private func loadBannerAd() {
-        guard ADXiluSDKManager.shared.isInitialized else {
+        guard ADXiluSDK.shared.isInitialized else {
             print("SDK未初始化")
             return
         }
@@ -205,7 +205,7 @@ extension BannerAdViewController: ADXiluBaseAdDelegate {
 #import <ADXiluSDK/ADXiluSDK.h>
 
 - (void)loadInterstitialAd {
-    if (![ADXiluSDKManager shared].isInitialized) {
+    if (![ADXiluSDK shared].isInitialized) {
         [self showAlertWithTitle:@"错误" message:@"SDK未初始化"];
         return;
     }
@@ -239,7 +239,7 @@ class InterstitialAdViewController: UIViewController {
     private var interstitialAd: ADXiluInterstitialAd?
     
     private func loadInterstitialAd() {
-        guard ADXiluSDKManager.shared.isInitialized else {
+        guard ADXiluSDK.shared.isInitialized else {
             print("SDK未初始化")
             return
         }
@@ -283,7 +283,7 @@ extension InterstitialAdViewController: ADXiluBaseAdDelegate {
 #import <ADXiluSDK/ADXiluSDK.h>
 
 - (void)loadRewardVodAd {
-    if (![ADXiluSDKManager.shared isInitialized]) {
+    if (![ADXiluSDK.shared isInitialized]) {
         [self showAlertWithTitle:@"错误" message:@"SDK未初始化"];
         return;
     }
@@ -329,7 +329,7 @@ class RewardVodAdViewController: UIViewController {
     private var rewardVodAd: ADXiluRewardVodAd?
     
     private func loadRewardVodAd() {
-        guard ADXiluSDKManager.shared.isInitialized else {
+        guard ADXiluSDK.shared.isInitialized else {
             print("SDK未初始化")
             return
         }
@@ -378,7 +378,7 @@ extension RewardVodAdViewController: ADXiluRewardVodAdDelegate {
 #import <ADXiluSDK/ADXiluSDK.h>
 
 - (void)loadSplashAd {
-    if (![ADXiluSDKManager.shared isInitialized]) {
+    if (![ADXiluSDK.shared isInitialized]) {
         [self showAlertWithTitle:@"错误" message:@"SDK未初始化"];
         return;
     }
@@ -423,7 +423,7 @@ class SplashAdViewController: UIViewController {
     private var splashAd: ADXiluSplashAd?
     
     private func loadSplashAd() {
-        guard ADXiluSDKManager.shared.isInitialized else {
+        guard ADXiluSDK.shared.isInitialized else {
             print("SDK未初始化")
             return
         }
@@ -510,7 +510,7 @@ extension SplashAdViewController: ADXiluBaseAdDelegate {
 class NativeRenderAdViewController: UIViewController {
     
     @objc private func loadAd() {
-        guard ADXiluSDKManager.shared.isInitialized else {
+        guard ADXiluSDK.shared.isInitialized else {
             showAlert(title: "错误", message: "SDK未初始化")
             return
         }
@@ -711,7 +711,7 @@ extension NativeRenderAdViewController: ADXiluBaseAdDelegate {
 
 ```swift
 // 初始化时设置调试模式
-ADXiluSDKManager.shared.initialize(appId: "your_app_id", debug: true) { success, error in
+ADXiluSDK.shared.initialize(appId: "your_app_id", debug: true) { success, error in
     if success {
         print("SDK初始化成功")
     } else {
@@ -752,7 +752,7 @@ ADXiluSDK采用组件化架构设计：
 ```
 ADXiluSDK/
 ├── Core/                    # 核心模块
-│   ├── ADXiluSDKManager.swift     # 主管理类
+│   ├── ADXiluSDK.swift     # 主管理类
 │   ├── ADXiluBaseAd.swift  # 广告基类
 │   ├── ADAdaptor.swift     # 适配器管理
 │   └── ADNetworkTool.swift # 网络工具
